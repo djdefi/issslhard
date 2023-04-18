@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Yes</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: url('https://media.giphy.com/media/oOiwRjguRGkjbNQvNv/giphy.gif');
+            background-size: cover;
+            background-position: center;
+        }
+        .yes {
+            position: absolute;
+            font-size: 3em;
+            font-weight: bold;
+            color: #FFFFFF;
+            animation: float 5s linear infinite, blink 1s steps(2, start) infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                left: 0;
+            }
+            50% {
+                transform: translateY(50%);
+                left: 50%;
+            }
+            100% {
+                transform: translateY(0);
+                left: 100%;
+            }
+        }
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="yes">YES</div>
+    <script>
+        const yesElement = document.querySelector('.yes');
+        const updatePosition = () => {
+            const newX = Math.random() * (window.innerWidth - yesElement.offsetWidth);
+            const newY = Math.random() * (window.innerHeight - yesElement.offsetHeight);
+            yesElement.style.left = `${newX}px`;
+            yesElement.style.top = `${newY}px`;
+        };
+        setInterval(updatePosition, 5000);
+    </script>
+</body>
+</html>
