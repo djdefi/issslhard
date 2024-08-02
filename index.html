@@ -14,22 +14,23 @@
         }
         .yes {
             position: absolute;
-            font-size: 3em;
+            font-size: 5em;
             font-weight: bold;
-            color: #FFFFFF;
+            color: #FF69B4;
+            font-family: 'Press Start 2P', cursive;
             animation: float 5s linear infinite, blink 1s steps(2, start) infinite;
         }
         @keyframes float {
             0% {
-                transform: translateY(0);
+                transform: translateY(0) translateZ(0);
                 left: 0;
             }
             50% {
-                transform: translateY(50%);
+                transform: translateY(50%) translateZ(50px);
                 left: 50%;
             }
             100% {
-                transform: translateY(0);
+                transform: translateY(0) translateZ(0);
                 left: 100%;
             }
         }
